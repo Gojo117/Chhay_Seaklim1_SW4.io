@@ -1,0 +1,107 @@
+/* Page Background */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f7fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Container */
+div:first-child {
+    width: 95%;
+    max-width: 1500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Header */
+thead {
+    background: linear-gradient(90deg, #0d6efd, #3b82f6);
+    color: white;
+}
+
+thead th {
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Body */
+tbody td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+/* Alternate Row Color */
+tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Hover Effect */
+tbody tr:hover {
+    background: #dbeafe;
+    cursor: pointer;
+}
+
+/* Price Column */
+tbody td:last-child {
+    color: #198754;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Rounded Bottom */
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    div:first-child {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    thead th,
+    tbody td {
+        padding: 10px;
+    }
+}
+

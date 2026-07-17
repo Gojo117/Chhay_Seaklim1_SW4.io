@@ -1,0 +1,93 @@
+<div class="container">
+  <h1>LIST PRODUCT INFORMANTION</h1>
+  <div class="filter-box">
+    <input
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      placeholder="Search by ID or Name..."
+    />
+    <select name="category" id="" [(ngModel)]="selectedCategory">
+      <option value="">All Category</option>
+      <option value="Soft drink">Soft drink</option>
+      <option value="beer">Beer</option>
+      <option value="water">Water</option>
+    </select>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price ($)</th>
+        <th>Amount ($)</th>
+        <th>Description</th>
+        <th>Created Date</th>
+        <th>Category</th>
+        <th>IMAGE</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of filterproducts; track p.productid) {
+        <tr>
+          <td>{{ p.productid }}</td>
+          <td>{{ p.productname }}</td>
+          <td>{{ p.qty }} Units</td>
+          <td>{{ p.price | currency }}</td>
+          <td>{{ p.amount | currency }}</td>
+          <td>{{ p.description }}</td>
+          <td>{{ p.created_date | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ p.categoryname }}</td>
+          <td>
+            <img [src]="p.images" alt="no_image" width="70" height="70" />
+          </td>
+          <td>
+            <button class="btn btn-edit" (click)="editproduct(p)">✏️ Edit</button>
+            <button class="btn btn-delete" (click)="deleteProduct(p.productid)">🗑️ Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  @if (showDeleteModal) {
+    <div class="modal">
+      <div class="modal-content">
+        <h1>Delete Product Information</h1>
+        <p>Are you sure Do you want to delete productId:{{ selectedId }}?</p>
+        <button class="btn-delete" (click)="comfrimDelete()">Yes delete</button>
+        <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+      </div>
+    </div>
+  }
+
+  @if (showEditModal) {
+    <div class="modal">
+      <div class="modal-content">
+        <h1>Edit Product Information</h1>
+
+        <input type="text" id="productname" [(ngModel)]="editData.productname" name="productname" placeholder="Product Name" />
+        <input type="number" id="qty" [(ngModel)]="editData.qty" name="qty" placeholder="Quantity" />
+        <input type="number" id="price" [(ngModel)]="editData.price" name="price" placeholder="Price" />
+        <input
+          type="date"
+          id="created_date"
+          [(ngModel)]="editData.created_date"
+          name="created_date"
+        />
+        <textarea id="description" [(ngModel)]="editData.description" name="description" placeholder="Description"></textarea>
+
+        <select id="category" [(ngModel)]="editData.categoryname" name="category">
+          <option value="Soft drink">Soft drink</option>
+          <option value="Beer">Beer</option>
+          <option value="Water">Water</option>
+        </select>
+
+        <button type="submit" class="btn btn-edit" (click)="updateProduct()">Update Product</button>
+        <button type="button" class="cancel-btn" (click)="showEditModal = false">Cancel</button>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,17 @@
+<h1>Welcome to the Angular App!</h1>
+
+<nav>
+  <a routerLink="/"class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/about" class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }" >About</a>
+  <a routerLink="/contact" class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+  <a routerLink="/product" class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Product</a>
+</nav>
+<router-outlet />

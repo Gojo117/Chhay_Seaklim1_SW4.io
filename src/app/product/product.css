@@ -1,0 +1,302 @@
+.container {
+  max-width: 1450px;
+  margin: auto;
+}
+h1 {
+  font-size: 40px;
+  font-family: sans-serif;
+  text-align: center;
+  color: blue;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+th,
+td {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+thead tr {
+  border-radius: 10px;
+  background-color: rgb(70, 161, 221);
+  border-radius: 10px;
+}
+tbody tr:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: 0.3s;
+}
+img {
+  border-radius: 5px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+/* Add CSS NEXT STEP */
+.filter-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.filter-box input,
+.filter-box select {
+  appearance: base-select;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 48%;
+}
+
+.filter-box input:focus,
+.filter-box select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+.btn {
+  margin: 0 4px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  margin: auto;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+  margin-left: 10px;
+}
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 5px;
+}
+
+/* ADD MODUAL */
+/* MODAL BACKGROUND */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* MODAL BOX */
+.modal-content {
+  width: 450px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: popup 0.3s ease;
+}
+/* TITLE */
+.modal-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4467f1;
+  font-size: 28px;
+}
+/* TEXT */
+.modal-content p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #666;
+  line-height: 1.6;
+  font-size: 14px;
+}
+/* INPUT */
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+/* INPUT FOCUS */
+.modal-content input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+/* BUTTON COMMON */
+.modal-content button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+/* EDIT BUTTON */
+.btn-edit {
+  background: #4f46e5;
+  color: white;
+}
+.btn-edit:hover {
+  background: #4338ca;
+}
+/* DELETE BUTTON */
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+.btn-delete:hover {
+  background: #dc2626;
+}
+/* CANCEL BUTTON */
+.cancel-btn {
+  background: #d1d5db;
+  color: #111827;
+}
+.cancel-btn:hover {
+  background: #9ca3af;
+}
+/* ANIMATION */
+@keyframes popup {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* TEXTAREA */
+.modal-content textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  resize: none;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  transition: 0.3s;
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* TEXTAREA FOCUS */
+.modal-content textarea:focus {
+  border-color: #4f46e5;
+  background: white;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+
+/* SELECT */
+.modal-content select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.3s;
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* SELECT FOCUS */
+.modal-content select:focus {
+  border-color: #4f46e5;
+  background: white;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+/* TEXTAREA */
+.modal-content textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  resize: none;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  transition: 0.3s;
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* TEXTAREA FOCUS */
+.modal-content textarea:focus {
+  border-color: #4f46e5;
+  background: white;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+
+/* SELECT */
+.modal-content select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.3s;
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* SELECT FOCUS */
+.modal-content select:focus {
+  border-color: #4f46e5;
+  background: white;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+/* #category {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.3s;
+} */

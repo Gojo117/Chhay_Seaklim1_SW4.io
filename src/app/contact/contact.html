@@ -1,0 +1,66 @@
+<div class="container col-4">
+  <h1 class="text-center h2 text-primary">Welcome To Contact Us Page</h1>
+  <div class="row justify-content-center align-items-center">
+    <form (ngSubmit)="saveData()">
+      <div class="form-group">
+        <label for="fullname">Fullname:</label>
+        <div class="input-group">
+          <span class="input-group-text">
+          <i class="bi bi-person"></i>
+        </span>
+          <input type="text" name="fullname" required class="form-control" [(ngModel)]="contact.fullname" placeholder="Enter your fullname"   />
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <label for="email">Email:</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <input type="email" name="email" class="form-control" [(ngModel)]="contact.email" placeholder="abc@gmail.com" />
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <label for="message">Phone</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+          <input type="number" name="phone" required  class="form-control" [(ngModel)]="contact.phone" placeholder="096857646" />
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <label for="message">Message:</label>
+        <textarea name="message" class="form-control" [(ngModel)]="contact.message"  placeholder="Write a message..."></textarea>
+      </div>
+      <div class="form-group mt-3">
+        <button  class="btn btn-primary">{{ editindex ===-1 ? 'Send To': "Update Contact"}}</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Result -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let item of listcontact; let i =index">
+      <div class="card border-success shadow-sm">
+        <div class="card-body">
+          <h4 class="text-success">
+            {{ item.fullname }}
+          </h4>
+          <p><i class="bi bi-envelope-check h4 me-3 text-primary"></i>>{{ item.email }}</p>
+          <p><i class="bi bi-telephone h4 me-3 text-danger"></i> {{ item.phone }}</p>
+          <p><i class="bi bi-chat h4 me-3 text-warning "></i> {{ item.message }}</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button  class="btn btn-outline-success" (click)="editData(i)" >
+            <i class="bi bi-pencil-square"></i>
+            Edit
+          </button>
+          <button class="btn btn-outline-danger" (click)="deleteData(i)" >
+            <i class="bi bi-trash"></i>
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
